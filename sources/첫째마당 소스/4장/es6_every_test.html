@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title> every </title>
+  <script>
+    const subjects = ["쓰기", "듣기", "말하기"];
+    const arr1 = subjects.map((item) =>{
+      return prompt(`영어 ${item}의 점수는?`, "0");
+    })
+
+    let result = arr1.every((item) => (item >= 60));
+
+    // result => true 혹은 false (초기화)
+    // result = result ? "합격" : "불합격"; (갱신)
+    // const 변수는 초기화를 제외하고 데이터 갱신(재할당)을 시도 할 경우 오류 발생
+
+    result = result ? "합격" : "불합격";
+    document.write(result);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

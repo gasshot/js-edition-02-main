@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메모장</title>
+
+    <script>
+        /*
+            0. rps라는 변수에 "가위", "바위", "보"가 담긴 배열을 생성하세요.
+            
+            1. Math.random()과 length를 활용하여 0, 1, 2 중 하나의 숫자를 랜덤하게 생성한 뒤, 
+             이를 인덱스로 사용하여 컴퓨터의 선택을 변수에 저장하세요.
+            
+            2. prompt()를 사용하여 사용자로부터 "가위", "바위", "보" 중 하나를 입력받아 변수에 저장하세요.
+
+            3. 조건문(if, else if, else)을 사용하여 상황을 판정하세요.
+
+                무승부: 사용자와 컴퓨터가 같은 값을 낸 경우. => 무승부
+                사용자 승리: 사용자가 승리한 경우.
+                컴퓨터 승리: 컴퓨터가 승리한 경우.
+            
+            4. 사용자의 입력과 컴퓨터의 랜덤 선택을 화면에 표시하고 최종 결과를 출력하세요.
+        */
+        const rps = ["가위", "바위", "보"];
+        const comRnd = rps[Math.floor(Math.random() * rps.length)];
+        const answer = prompt("가위, 바위, 보 중 하나를 입력하세요!", "가위");
+
+        let result = ""; // 결과를 담을 바구니
+
+        switch (answer) {
+            case "가위":
+                if (comRnd === "가위") result = "무승부";
+                else if (comRnd === "바위") result = "컴퓨터의 승리";
+                else result = "당신의 승리"; 
+                break;
+
+            case "바위":
+                if (comRnd === "가위") result = "당신의 승리";
+                else if (comRnd === "바위") result = "무승부";
+                else result = "컴퓨터의 승리"; 
+                break;
+
+            case "보":
+                if (comRnd === "가위") result = "컴퓨터의 승리";
+                else if (comRnd === "바위") result = "당신의 승리";
+                else result = "무승부"; 
+                break;
+
+            default:
+                alert("가위, 바위, 보 중에서만 입력해야 합니다!");
+                location.reload();
+                break;
+        }
+
+        // 화면 출력 (가장 단순하게)
+        if (result !== "") {
+            document.write(`컴퓨터: ${comRnd} <br>`);
+            document.write(`나: ${answer} <br>`);
+            document.write(`<h3>결과: ${result}입니다!</h3>`);
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

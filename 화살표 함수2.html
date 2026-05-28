@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 화살표 함수2 </title>
+    <script>
+        // Arrow Function
+        // 역시 함수입니다.
+        // 매개변수를 가질 수 있습니다.
+        // 반환값도 가질 수 있습니다.
+
+        var bbb = function(number) { return number -10; } // 변수에 담는 형식
+        var bbb = (number) => { return number -10 }; // 화살표 형식
+        var bbb = (number) => number - 10;            // 더 간략화한 화살표 형식(람다 표현)
+
+        var arr = [1,2,3,4,5]; // 배열
+
+        var arr2 = arr.map((item)=> item * 10);
+
+        document.write(arr2);
+        
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

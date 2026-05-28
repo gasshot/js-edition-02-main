@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모듈 패턴</title>
+</head>
+<body>
+        <script >
+            // Calculator(계산기) 객체를 만들것이고
+            // 속성은 2개 넣을 것이고
+            // 기능은 프로토타입으로 처리해주시구요
+            // 속성 피연산자들(숫자)
+            // 기능1 => 더하기(+) => 명칭은 plus
+            // 기능2 => 빼기(-)   => 명칭은 minus
+            // 기능3 => 곱하기(*)   => 명칭은 product
+            // 기능4 => 나누기(/)   => 명칭은 divide
+            // 기능5 => 나머지(%)   => 명칭은 reminder
+            // 기능6 => 거듭제곱(^) => 속성1을 속성2로 거듭제곱 => 명칭은 pow
+
+            // 배열의 이름은 resultList
+            // 기능1부터 기능 6까지의 결과를
+            // 배열에 순서대로 집어 넣고 배열을 출력하세요.
+            // 예를 들어 document.write(resultList);
+
+            function Calculator(num1, num2){
+                this.calNum1 = num1;
+                this.calNum2 = num2;
+            }
+
+            Calculator.prototype.plus = function(){
+                return this.calNum1 + this.calNum2;
+            }
+
+            Calculator.prototype.minus = function(){
+                return this.calNum1 - this.calNum2;
+            }
+
+            Calculator.prototype.product = function(){
+                return this.calNum1 * this.calNum2;
+            }
+
+            Calculator.prototype.divide = function(){
+                return Math.floor(this.calNum1 / this.calNum2);
+            }
+
+            Calculator.prototype.remider = function(){
+                return this.calNum1 % this.calNum2;
+            }
+
+            Calculator.prototype.pow = function(){
+
+                // var result = 1;
+                // for(var i = 0; i < this.calNum2; i++){
+                //     result = result * this.calNum1;
+                // }    
+                return Math.pow(this.calNum1, this.calNum2);
+            }
+            var cal = new Calculator(2, 4);
+            var resultList = new Array(
+                cal.plus(),
+                cal.minus(),
+                cal.product(),
+                cal.divide(),
+                cal.remider(),
+                cal.pow()
+            )
+
+            document.write(resultList);
+
+
+        </script>
+</body>
+</html>

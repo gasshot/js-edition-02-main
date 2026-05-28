@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> map을 이용한 가공 데이터 담기 </title>
+<script>
+  const arr1 = [10, 20, 30]; // 배열을 담았다
+  const arr2 = arr1.map((item) => (item / 10));
+  console.log(arr2);
+
+  const arr3 = ["홍길동", "김갑중", "박상무"];
+  const arr4 = arr3.map((item, idx) =>{
+    let obj = {}; // 
+    obj["no"] = idx + 1;
+    obj["userName"] = item;
+    return obj;
+  })
+
+  // 0회차 [{"no": 1, "userName": "홍길동" }, ]
+  // 1회차 [{"no": 1, "userName": "홍길동" }, {"no": 2, "userName": "김갑중" }]
+  
+  /* 2회차 [{"no": 1, "userName": "홍길동" }, 
+            {"no": 2, "userName": "김갑중" },
+            {"no": 3, "userName": "박상무" }] 
+  */ 
+
+  console.log(arr4);
+ 
+</script>
+</head>
+<body>
+</body>
+</html>

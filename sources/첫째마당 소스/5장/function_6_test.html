@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 함수 </title>
+<style>
+	*{margin: 0;padding: 0;}
+	#galleryZone {text-align: center;}
+	#galleryZone input[type="image"]{margin:0 8px;}
+</style>
+<script>
+	var num = 1;
+	function gallery(direct){
+		// 현재 저자는 이진수를 이용해서 이전, 다음 버튼의 기능르 구별하여 구현했음
+		// direct가 0이 들어오면 else 문이 실행됨.       => num 1씩 감소 (단, num이 1이면 무시한다)
+		// direct가 1이 들어오면 if(direct) 문이 실행됨. => num 1씩 증가 (단, num이 8이면 무시한다)
+
+		if(direct){
+			if(num == 8) return; // 단 8일 경우는 아무것도 하지말고 리턴(함수종료)
+			num++;
+		}else{
+			if(num == 1) return;
+			num--;
+		}
+
+		//var imgTag = document.getElementById("photo"); // img 태그 가져오기
+		//imgTag.setAttribute("src", "images/pic_" + num + ".jpg");
+		// 가져온 img태그의 src속성을 "images/pic_{num}.jpg" 경로 변경
+		var h1 = document.getElementById("check");
+		h1.textContent = "images/pic_" + num + ".jpg";
+
+	}
+</script>
+</head>
+<body>
+	<div id="galleryZone">
+
+		<p><h1 id="check">images/pic_1.jpg</h1></p>
+		<p><img src="images/pic_1.jpg" id="photo" alt=""></p>
+		<p>
+			<button onclick="gallery(0)">이전</button>
+			<button onclick="gallery(1)">다음</button>
+		</p>
+	</div>
+</body>
+</html>

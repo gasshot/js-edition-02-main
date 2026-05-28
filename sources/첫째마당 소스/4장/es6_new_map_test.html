@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title> new Map </title>
+  <script>
+    const contry = ["영어", "중국어"];
+    const subjects = ["쓰기", "말하기"];
+    const myMap = new Map();
+
+    for (let i = 0; i < contry.length; i++){
+      myMap.set(contry[i], []);
+      // i = 0 
+      // myMap.set("키", 데이터);
+      // 키 => contry[0] => "영어"
+      // myMap.set(contry[i], []); => myMap.set("영어", []);
+      // myMap.set("영어", []);의 [] => "영어"키 값에 대응하는 새로운 배열 객체
+
+      for (let k = 0; k < subjects.length; k++){
+        myMap.get(contry[i])
+        .push(prompt(`${contry[i]}에 ${subjects[k]} 점수는?`));
+        // i = 0
+        // k = 0
+        // myMap.get(contry[0]) => myMap.get("영어")
+        // "영어"키 값에 대응하는 배열 객체 불러오기
+        // 가져온 배열객체(myMap.get("영어")).push(~~~) => 
+        // 그 가져온 배열 객체에 마지막 인덱스에 prompt로 사용자의 입력값을 가져와서 저장
+        // ~~~ =>(prompt(`${contry[i]}에 ${subjects[k]} 점수는?`)
+        // 영어에 쓰기 점수는? 하고 입력창이 뜰겁니다.
+        // 입력을 하면 push로 인해서 저장이 될겁니다.
+      }
+    }
+
+          console.log(myMap.get("영어"));
+      console.log(myMap.get("중국어"));
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

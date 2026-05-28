@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title> 함수 </title>
+	<script>
+		var rightId = "korea";
+		var rightPw = "1234";
+
+		function login(id, pw){
+			if(id == rightId){
+				// id(매개변수)가 외부 입력값을 받아와서 자기 담고 있는 상태
+				// 매개변수의 데이터와 rightId라는 이름의 변수 데이터와 비교(==)
+				// 입력값이 "korea"일 경우
+
+				if(pw == rightPw){
+					// pw(매개변수)가 외부 입력값을 받아와서 자기 담고 있는 상태
+					// 매개변수의 데이터와 rightPw라는 이름의 변수 데이터와 비교(==)
+					// 입력값이 "1234"일 경우
+					document.write(id + " 님 방문을 환영합니다.");
+				}else{
+					// 비교를 하니 맞지 않은 경우
+					alert("잘못된 비밀번호입니다.");					
+				}			
+			}else{
+				// 아이디조차 틀렸을 경우
+				alert("존재하지 않는 아이디입니다.");					
+			}
+		}
+
+			var userId = prompt("아이디를 입력하세요.", "");
+			var userPw = prompt("비밀번호를 입력하세요.", "");
+
+			login(userId, userPw);
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

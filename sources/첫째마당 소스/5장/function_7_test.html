@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 함수 </title>
+	<script>
+		var num = 0;
+		function testFnc() {
+			num++;
+			document.write(num, "<br>");
+			if(num == 10) return; // num값이 10에 도달하면 리턴(함수의 종료)
+
+			testFnc(); // 재귀 함수 호출
+		}
+
+		testFnc(); // 첫 호출
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

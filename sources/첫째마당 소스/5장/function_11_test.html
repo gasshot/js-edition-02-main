@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> 함수 </title>
+    <script>
+        function CheckWeight(name, height, weight){
+            this.userName = name;
+            this.userHeight = height;
+            this.userWeight = weight;
+            this.minWeight;
+            this.maxWeight;
+        }
+
+        CheckWeight.prototype.getInfo = function(){
+            var str = "";
+            str += "이름: " + this.userName + ", ";
+            str += "키: " + this.userHeight + ", ";
+            str += "몸무게: " + this.userWeight + "<br>";
+            return str; // 이 함수는 str라고 하는 변수의 데이터를 반환하면서 메서드 종료
+        }
+
+        CheckWeight.prototype.getResult = function(){
+            this.minWeight = (this.userHeight - 100) * 0.9 - 5; //정상체중범위에서 가장 가벼운 체중
+            this.maxWeight = (this.userHeight - 100) * 0.9 + 5; //정상체중범위에서 가장 무거운 체중
+
+            if(this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight){
+                return "정상 몸무게입니다."  
+            } else if  (this.userWeight < this.minWeight){
+                return "정상 몸무게보다 미달입니다." 
+            } else {
+                return "정상 몸무게보다 초과입니다."               
+            }
+        }
+
+        var jang = new CheckWeight("장보리", 168, 62);
+        var park = new CheckWeight("박달재", 180, 88);
+
+        console.log(jang);
+        console.log(park);
+
+        // jang.getInfo()의 결과물은 사실상 문자데이터입니다. jang.getInfo() === "~~~~~~~~";
+        document.write(jang.getInfo());
+        document.write(jang.getResult(), "<br>");
+
+        document.write(jang.getResult() === park.getResult());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

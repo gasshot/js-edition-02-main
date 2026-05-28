@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤값 뽑기</title>
+
+    <script>
+        // 0 - 10
+        // 아래 코드는
+        // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 
+        // 랜덤하게 뽑게 됩니다.
+        // Math.random() => 0.95678(0 ~ 1 사이에 있는 소수점 값을 랜덤하게 뽑는 기능)
+
+        // 최솟값 = 0
+        // 최대값 = 10
+        // Math.floor(Math.random() * (최댓값 - 최솟값 + 1) + 최솟값);
+        // Math.floor(Math.random() * (10 - 0 + 1) + 0);
+        Math.floor(Math.random() * 11);
+
+        // Math.floor(10.52458) => Math.floor는 소수점 첫번째 자리기준으로 내림
+        // 10 <= (내림) <=  10.52458 => (올림) => 11
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

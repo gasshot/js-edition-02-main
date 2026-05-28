@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> continue문 </title>
+	<script>
+		for (var i = 1; i <= 10; i++) {
+			if (i % 2 == 0) {
+				continue; // 2의 배수에 해당하는 i 값 상태에서 넘겨라
+				document.write(`${i}는 2의 배수이니 넘깁니다. <br>`);
+			}
+			document.write(i, "<br>"); // 2의 배수에 해당하지 않는 i 값은 출력해라
+		}
+		document.write("=== The End ===");
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

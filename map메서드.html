@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map메서드</title>
+
+    <script>
+        let arr1 = [1, 2, 3];
+        let arr2 = arr1.map((item) => (item * 10));
+
+        //arr1.map((item) => console.log(item * 10));
+        // 배열객체를 담은 변수명.map((아이템의 이름) => 그 아이템 이름에 무언가 처리하는 코드);
+        // 아이템의 이름은 여러분 마음대로 정하여도 무방합니다.
+        // 그 아이템 이름에 무언가 처리하는 코드(consol.log(item);)
+
+        // arr1의 배열 데이터를 가지고 오느 것이지, 배열 데이터를 수정하는게 아니라는 것!!!
+        
+        // map()
+        // item : 배열을 순회할 때 해당 순회에 대응하는 데이터
+        // (item) => (item * 10) : 데이터를 뽑아 왔을 때 새로운 배열 안에 
+        // item * 10을 한 결과값을 push해줌
+        // 그렇게 순회가 완료되면 새로운 배열을 결과로 내놓은 메서드
+        // () => 처리할 코드 (람다식)
+
+
+        console.log(arr1);
+        console.log(arr2);
+
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

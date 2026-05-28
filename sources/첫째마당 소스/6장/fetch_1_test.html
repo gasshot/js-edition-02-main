@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>fetch</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid #aaa;
+      padding: 8px 10px;
+    }
+  </style>
+  <script>
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data 1:", data);
+      })
+
+    const geData = async ()=>{
+      try{
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const data = await response.json();
+
+        console.log("Data 2:", data.slice(0, 10));
+        const tbody = document.querySelector("#fetchTable tbody");
+        // data.slice(0, 10)는 100개의 요소를 가진 배열에서 인덱스 0부터 인덱스 9까지 요소를 잘라온 뒤에
+        // 새로운 배열로 만들겠다.
+        data.slice(0, 10).forEach(item => {
+          const row = document.createElement('tr');
+
+          const idCell =document.createElement('td');
+          idCell.textContent = item.id; // 가져온 데이터의 요소(객체)의 id라는 (키)값이 있다라고 유추할 수 있음
+          row.appendChild(idCell);
+
+          const titleCell = document.createElement('td');
+          titleCell.textContent = item.title;
+          // item.title의 데이터는 아래와 같다
+          // "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+          row.appendChild(titleCell);
+
+          const bodyCell = document.createElement('td');
+          bodyCell.textContent = item.body;
+          row.appendChild(bodyCell);
+
+          tbody.appendChild(row);
+        });
+      }catch (error){
+        console.log(error.message);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      geData();
+    });
+  </script>
+</head>
+
+<body>
+  <table id="fetchTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>BODY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 테이블을 코드로 작성하겠다. -->
+    </tbody>
+  </table>
+</body>
+
+</html>

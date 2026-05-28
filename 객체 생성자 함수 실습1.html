@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 객체 생성자 함수 실습1 </title>
+    <script>
+        // 객체명으로 Profile
+        // 여러분의 이름
+        // 나이
+        // 성별
+        // 좋아하는 것
+        // 기능은 이름, 나이, 성별, 좋아하는 것을 화면에 출력하는 기능을 구현해보겠습니다.
+
+        function Profile(name, age, sex, hobby){
+            this.userName = name;
+            this.userAge = age;
+            this.userSex = sex;
+            this.userHobby = hobby;
+
+            this.getInfo = function(){
+                document.write(`저의 이름은 ${this.userName}입니다.`, "<br>");
+                document.write(`저의 나이는 ${this.userAge}입니다.`, "<br>");
+                document.write(`저의 성별은 ${this.userSex}입니다.`, "<br>");
+                document.write(`저의 취미는 ${this.userHobby}입니다.`, "<br>");
+
+                document.write("이상 저의 소개를 마치겠습니다.");
+            }
+        }
+        var kang = new Profile("강인오", 35, "남자", "코딩");
+
+        kang.getInfo(); // 출력
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

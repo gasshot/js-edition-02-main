@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 사용자 정의 객체 </title>
+<script>
+	var tv = new Object(); // tv변수에 빈 객체를 담아줘
+
+	tv.color = "white"; // tv 안의 객체의 속성(color)을 만들고
+	                    // 속성값을 white로 대입
+	tv.price = 300000;  // 가격 속성에 300000 대입
+	tv.info = function(){
+		document.write("tv의 색상:" + this.color + "<br>"); //this.color => tv.color             
+		document.write("tv의 가격:" + this.price); //this.price => tv.price
+	}
+
+	var car = {
+		color : "black",
+		price : 5000000,
+		info: function(){
+			document.write("car 색상:" + this.color + "<br>");
+			document.write("car 가격:" + this.price);
+		}
+	}
+
+	document.write("<h1>tv 객체 메서드 호출</h1>");
+	tv.info(); // tv 객체의 info라는 기능 가져와서 호출하기
+
+	document.write("<h1>car 객체 메서드 호출</h1>");
+	car.info();
+
+      
+</script>
+</head>
+<body>
+</body>
+</html>

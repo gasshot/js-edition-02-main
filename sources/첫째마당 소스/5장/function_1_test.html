@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title> 함수 </title>
+	<script>
+		var count = 0; // 0
+
+		myFnc(); // count++ => count의 데이터는 1
+
+		function myFnc() {
+			count++;
+			document.write("hello" + count, "<br>");
+		}
+
+		myFnc(); // count++ => count의 데이터는 2
+		
+		var theFnc = function(){
+			count++;
+			document.write("bye"+ count,"<br>");
+			console.log("안녕하세요.");
+		}
+
+		theFnc();
+
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>
