@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title> 탐색 선택자 </title>  
-<script src="js/jquery.js"></script>
-<script>
-$(function(){
- 
-});
-</script>
+	<meta charset="UTF-8">
+	<title> 탐색 선택자 </title>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function () {
+
+			// 1. id가 inner_1이라는 요소에서 class가 txt1인 요소를 찾으세요.
+
+			$("#inner_1").find(".txt1")
+			.css({"background-color":"#ff0"});
+
+			// 2. id가 inner_1이라는 요소의 하위요소 <p>요소들 중에 class가 txt2인 요소를 찾으세요.
+			$("#inner_1 p").filter(".txt2")
+			.css({"background-color":"#0ff"});
+
+			// 3. id가 inner_2이라는 요소의 하위요소 <p>요소들 중에 
+			// 인덱스값이 짝수일 경우에만 배경색을 바꾸세요.	
+			$("#inner_2 p").filter(function(idx, obj){
+				console.log(idx);
+				return idx % 2 == 0;
+			})
+			.css({"background-color":"#0f0"});
+		});
+	</script>
 </head>
+
 <body>
 	<div id="outer_wrap">
 		<h1>콘텐츠 탐색 선택자</h1>
@@ -18,7 +35,7 @@ $(function(){
 			<p class="txt1">내용1</p>
 			<p class="txt2">내용2</p>
 		</section>
-		
+
 		<section id="inner_2">
 			<h2>filter(function)</h2>
 			<p>index 0</p>
@@ -28,4 +45,5 @@ $(function(){
 		</section>
 	</div>
 </body>
+
 </html>
